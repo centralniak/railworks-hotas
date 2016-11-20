@@ -1,4 +1,8 @@
-class Hotas:
+class ThrustmasterTFlightHotasX:
+    """
+    Thrustmaster T-Flight Hotas X
+    https://goo.gl/hgGdwJ
+    """
 
     @staticmethod
     def handle_raw(raw_input):
