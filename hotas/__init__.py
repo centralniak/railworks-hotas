@@ -29,7 +29,7 @@ class Hotas:
         self.raildriver_listener.start()
         self.bind_loco()
 
-        self.usb = usb.Hotas
+        self.usb = usb.ThrustmasterTFlightHotasX
         self.hid = hid.HidDeviceFilter(product_id=0xb108, vendor_id=0x044f).get_devices()[0]
         self.hid.open()
         self.hid.set_raw_data_handler(self.input_handler)
