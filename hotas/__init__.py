@@ -6,6 +6,8 @@ from hotas import usb
 
 
 sim_handlers = {
+    'JustTrains.Meridian': sim.Class222Handler,
+
     'RSC.KentHighSpeed': sim.Class375Handler,
 }
 

@@ -24,6 +24,10 @@ class NotchedHandler(BaseHandler):
                 super(NotchedHandler, self).handle(notch)
 
 
+class Class222Handler(BaseHandler):
+    pass
+
+
 class Class375Handler(NotchedHandler):
 
     notches = [
