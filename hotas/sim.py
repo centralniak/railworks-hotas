@@ -42,7 +42,7 @@ class Class170_171Handler(NotchedHandler):
     ]
 
 
-class Class375Handler(NotchedHandler):
+class Class375_377Handler(NotchedHandler):
 
     notches = [
         (lambda v: v == 0, 0),

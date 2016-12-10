@@ -9,7 +9,8 @@ from hotas import usb
 
 
 sim_handlers = {
-    'RSC\.KentHighSpeed': sim.Class375Handler,
+    'RSC\.BrightonMainLine': sim.Class375_377Handler,
+    'RSC\.KentHighSpeed': sim.Class375_377Handler,
 
     'Thomson\.Class170Pack01': sim.Class170_171Handler,
 }
