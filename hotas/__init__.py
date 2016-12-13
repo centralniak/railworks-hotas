@@ -59,5 +59,9 @@ class Hotas:
         self.sim.handle(value)
 
 
-if __name__ == '__main__':
+def __main__():
     Hotas().main()
+
+
+if __name__ == '__main__':
+    __main__()
