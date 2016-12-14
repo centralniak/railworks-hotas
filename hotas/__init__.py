@@ -1,12 +1,17 @@
+import re
+
 from pywinusb import hid
 import raildriver
+import toolz
 
 from hotas import sim
 from hotas import usb
 
 
 sim_handlers = {
-    'RSC.KentHighSpeed': sim.Class375Handler,
+    'RSC\.KentHighSpeed': sim.Class375Handler,
+
+    'Thomson\.Class170Pack01': sim.Class170_171Handler,
 }
 
 
@@ -47,7 +52,12 @@ class Hotas:
         loco_name = self.raildriver.get_loco_name()
         if loco_name is not None:
             self.running = True
-            self.sim = sim_handlers.get('.'.join(loco_name[:2]), sim.BaseHandler)(self.raildriver)
+
+            sim_handler_matches = toolz.dicttoolz.keyfilter(
+                lambda k: re.compile('^{}'.format(k)).search('{}.{}.{}'.format(*loco_name)) is not None, sim_handlers)
+            sim_handler_class = list(sim_handler_matches.values())[0] if sim_handler_matches else sim.BaseHandler
+
+            self.sim = sim_handler_class(self.raildriver)
         else:
             self.running = False
             self.sim = None
