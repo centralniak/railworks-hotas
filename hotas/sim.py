@@ -24,6 +24,24 @@ class NotchedHandler(BaseHandler):
                 super(NotchedHandler, self).handle(notch)
 
 
+class Class170_171Handler(NotchedHandler):
+
+    notches = [
+        (lambda v: v == 0, 0),
+        (lambda v: 0 < v <= .16, .20),
+        (lambda v: .16 < v <= .32, .30),
+        (lambda v: .32 < v <= .48, .38),
+        (lambda v: .48 < v < .52, .5),
+        (lambda v: .52 <= v < .60, .57),
+        (lambda v: .60 <= v < .68, .64),
+        (lambda v: .68 <= v < .76, .71),
+        (lambda v: .76 <= v < .84, .78),
+        (lambda v: .84 <= v < .92, .84),
+        (lambda v: .92 <= v < 1, .92),
+        (lambda v: v == 1, 1),
+    ]
+
+
 class Class375Handler(NotchedHandler):
 
     notches = [
