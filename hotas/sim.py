@@ -55,3 +55,18 @@ class Class375_377Handler(NotchedHandler):
         (lambda v: .84 <= v < 1, .86),
         (lambda v: v == 1, 1),
     ]
+
+
+class Class465Handler(NotchedHandler):
+
+    notches = [
+        (lambda v: v == 0, 0),
+        (lambda v: 0 < v <= .16, .1),
+        (lambda v: .16 < v <= .32, .2),
+        (lambda v: .32 < v <= .48, .33),
+        (lambda v: .48 < v < .52, .5),
+        (lambda v: .52 <= v < .68, .625),
+        (lambda v: .68 <= v < .84, .75),
+        (lambda v: .84 <= v < 1, .875),
+        (lambda v: v == 1, 1),
+    ]
